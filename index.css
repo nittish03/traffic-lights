@@ -1,0 +1,140 @@
+body {
+  background-color: rgb(4, 24, 41);
+}
+p{pointer-events: none;}
+.green:hover{
+  background-color: rgb(0, 255, 0);
+    box-shadow: 0 0 5px rgb(0, 255, 0), 0 0 25px rgb(0, 255, 0),
+      0 0 50px rgb(0, 255, 0), 0 0 100px rgb(0, 255, 0);
+    color: white;
+}
+.yellow:hover{
+  background-color: rgb(255, 255, 0);
+  box-shadow: 0 0 5px yellow, 0 0 25px yellow, 0 0 50px yellow,
+    0 0 100px yellow;
+  color: white;
+}
+.red:hover{
+   background-color: rgb(255, 0, 0);
+    box-shadow: 0 0 5px red, 0 0 25px red, 0 0 50px red, 0 0 100px red;
+    color: white;
+}
+.container {
+  height: 550px;
+  width: 200px;
+  background-color: black;
+  border: 2px solid white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+.green {transition: 1s;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: rgb(0, 255, 0, 0.2);
+  animation: animation1 5s 5s 1 normal none;
+  display: flex;
+  color: rgb(255, 255, 255, 0.2);
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+.yellow {transition: 1s;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 0, 0.2);
+  animation: animation2 2s 3s 1 normal none;
+  color: rgb(255, 255, 255, 0.2);
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+.yellow p {
+  position: relative;
+  left: 26px;
+  top: 10px;
+}
+.red {transition: 1s;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: rgb(255, 0, 0, 0.2);
+  animation: animation3 2s 1s 1 normal none;
+  color: rgb(255, 255, 255, 0.2);
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+.red p {
+  position: relative;
+  left: 26px;
+  top: 10px;
+}
+.green,
+.yellow,
+.red {
+  position: relative;
+  top: 10px;
+}
+@keyframes animation1 {
+  from {
+    background-color: rgb(0, 255, 0, 0.2);
+  }
+  to {
+    background-color: rgb(0, 255, 0);
+    box-shadow: 0 0 5px rgb(0, 255, 0), 0 0 25px rgb(0, 255, 0),
+      0 0 50px rgb(0, 255, 0), 0 0 100px rgb(0, 255, 0);
+    color: white;
+  }
+}
+@keyframes animation2 {
+  from {
+    background-color: rgb(255, 255, 0, 0.2);
+  }
+  to {
+    background-color: rgb(255, 255, 0);
+    box-shadow: 0 0 5px yellow, 0 0 25px yellow, 0 0 50px yellow,
+      0 0 100px yellow;
+    color: white;
+  }
+}
+@keyframes animation3 {
+  from {
+    background-color: rgb(255, 0, 0, 0.2);
+  }
+  to {
+    background-color: rgb(255, 0, 0);
+    box-shadow: 0 0 5px red, 0 0 25px red, 0 0 50px red, 0 0 100px red;
+    color: white;
+  }
+}
+
+/* to make the traffic lights go reverse
+comment the given below statements out */
+
+/* .red{transition: 1s;
+    height: 150px;
+width: 150px;
+border-radius: 50%;
+background-color: rgb(255, 0, 0,0.2);
+animation: animation3 5s 5s 1 normal none;
+}
+.yellow{transition: 1s;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color:rgb(255, 255, 0,0.2) ;
+    animation: animation2 2s  3s 1 normal none;}
+    .green{transition: 1s;
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        background-color:rgb(0, 255, 0,0.2);
+        animation: animation1 2s 1s  1 normal none;
+        
+        }
