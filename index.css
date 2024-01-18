@@ -36,6 +36,9 @@ p{pointer-events: none;}
   left: 26px;
   top: 10px;
 }
+button{
+  font-weight: bold;
+}
 /* animation started here */
 .yellow {transition: 1s;
   height: 150px;
@@ -96,6 +99,15 @@ p{pointer-events: none;}
 .red {
   position: relative;
   top: 10px;
+}
+/* started the reset button */
+#reset{
+  height: 40px; 
+  width: 100px;
+  font-size: 18px;
+  position: absolute;
+  left: 1000px;
+  top: 200px;
 }
 @keyframes animation1 {
   from {
