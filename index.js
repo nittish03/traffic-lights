@@ -1,50 +1,53 @@
-let r=document.getElementById("re");
-let g=document.getElementById("gr");
-let y=document.getElementById("ye");
-let a=document.getElementById("start");
-let b=document.getElementById("end");
-let d=document.getElementById("container");
-
-let cb=document.createElement("button");
-cb.setAttribute("id","reset");
-cb.innerText=("RESET");
-
-// let e=document.createElement("button")
-// e.setAttribute("id","end");
-// e.setAttribute("class","but");
-// e.innerText=("GREEN")
-
-// let f=document.createElement("button")
-// f.setAttribute("id","start");
-// f.setAttribute("class","but");
-// f.innerText=("RED")
-
-a.onclick=()=>{
-        r.style.animation="animation3 2s 1s 1 normal none";
-        g.style.animation=" animation1 5s 5s 1 normal none";
-        y.style.animation="animation2 2s 3s 1 normal none";
-        b.after(cb)
-        a.remove();
-        b.remove();
+const lights = {
+        red: document.getElementById("re"),
+        yellow: document.getElementById("ye"),
+        green: document.getElementById("gr")
+    };
+    const startBtn = document.getElementById("start");
+    const endBtn = document.getElementById("end");
+    const container = document.getElementById("container");
+    
+    const resetBtn = document.createElement("button");
+    resetBtn.setAttribute("id", "reset");
+    resetBtn.classList.add("btn");
+    resetBtn.innerText = "RESET";
+    
+    function animateLight(light, delay, duration) {
+        setTimeout(() => {
+            light.style.animation = `lightUp ${duration}s forwards`;
+            light.style.backgroundColor = light.classList[1];
+        }, delay * 1000);
+    }
+    
+    function resetLights() {
+        for (let light in lights) {
+            lights[light].style.animation = "";
+            lights[light].style.backgroundColor = "";
         }
-b.onclick=()=>{
-        r.style.animation="animation3 5s 5s 1 normal none";
-        g.style.animation="animation1 2s 1s  1 normal none";
-        y.style.animation="animation2 2s  3s 1 normal none";
-        b.after(cb);
-        a.remove();
-        b.remove();  
-        }
-cb.onclick=()=>{
-    document.location.reload();
-    r.style.animation="";
-    g.style.animation="";
-    y.style.animation="";
-    // cb.remove();
-    // d.after(f);
-    // d.after(e);
-}
-
-
-
-
+    }
+    
+    // Swapped functionality: This was previously endBtn.onclick
+    startBtn.onclick = () => {
+        resetLights();
+        animateLight(lights.green, 1, 2);
+        animateLight(lights.yellow, 3, 2);
+        animateLight(lights.red, 5, 5);
+        container.after(resetBtn);
+        startBtn.remove();
+        endBtn.remove();
+    };
+    
+    // Swapped functionality: This was previously startBtn.onclick
+    endBtn.onclick = () => {
+        resetLights();
+        animateLight(lights.red, 1, 2);
+        animateLight(lights.yellow, 3, 2);
+        animateLight(lights.green, 5, 5);
+        container.after(resetBtn);
+        startBtn.remove();
+        endBtn.remove();
+    };
+    
+    resetBtn.onclick = () => {
+        location.reload();
+    };

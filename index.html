@@ -2,20 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS level-2</title>
-    <link rel="stylesheet" href="./index.css">
+    <title>Traffic Light Simulation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<div class="container" id="container">
-
-<div id="gr" class="green"><p>GO</p></div>
-<div id="ye" class="yellow"><p>WAIT</p></div>
-<div id="re" class="red"><p>STOP</p></div>
-</div>
-<button class="but" id="start">GREEN</button>
-<button class="but" id="end">RED</button>
-<script src="index.js"></script>
+    <div id="container" class="container">
+        <div id="gr" class="light green"><p>GO</p></div>
+        <div id="ye" class="light yellow"><p>WAIT</p></div>
+        <div id="re" class="light red"><p>STOP</p></div>
+    </div>
+    <div class="controls">
+        <button id="start" class="btn">RED</button>
+        <button id="end" class="btn">GREEN</button>
+    </div>
+    <script src="index.js"></script>
 </body>
 </html>
