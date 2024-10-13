@@ -14,7 +14,7 @@ const lights = {
     
     function animateLight(light, delay, duration) {
         setTimeout(() => {
-            light.style.animation = `lightUp ${duration}s forwards`;
+            light.style.animation = `lightUp ${duration}s forwards ease-in-out `;
             light.style.backgroundColor = light.classList[1];
         }, delay * 1000);
     }
@@ -31,7 +31,15 @@ const lights = {
         resetLights();
         animateLight(lights.green, 1, 2);
         animateLight(lights.yellow, 3, 2);
-        animateLight(lights.red, 5, 5);
+        setTimeout(()=>{
+            console.log("green");
+            lights.green.style.animation = "";
+            lights.yellow.style.animation = "";
+            lights.green.style.backgroundColor = "";
+            lights.yellow.style.backgroundColor = "";
+        },5000)
+        animateLight(lights.red, 4.1, 2);
+
         container.after(resetBtn);
         startBtn.remove();
         endBtn.remove();
@@ -42,7 +50,14 @@ const lights = {
         resetLights();
         animateLight(lights.red, 1, 2);
         animateLight(lights.yellow, 3, 2);
-        animateLight(lights.green, 5, 5);
+        setTimeout(()=>{
+            console.log("green");
+            lights.red.style.animation = "";
+            lights.yellow.style.animation = "";
+            lights.red.style.backgroundColor = "";
+            lights.yellow.style.backgroundColor = "";
+        },5000)
+        animateLight(lights.green, 5, 4.1);
         container.after(resetBtn);
         startBtn.remove();
         endBtn.remove();
